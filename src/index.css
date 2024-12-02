@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Parkinsans:wght@300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  a {
+    @apply text-[rgb(97,97,97)];
+  }
+
+  .btns {
+    @apply py-[10px] px-[20px] bg-transparent  border-[0.6px] border-solid border-[#ccc] rounded-[5px] text-[#323232] font-parkinsans cursor-pointer;
+  }
+  .rating-star {
+    @apply text-[#d5ab55] text-xl;
+  }
+  .sidebar-label-container {
+    @apply block relative pl-9 mb-2 cursor-pointer;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .sidebar-label-container input {
+    @apply absolute opacity-[0]  cursor-pointer;
+  }
+
+  .checkmark {
+    @apply absolute top-0 left-0 h-5 w-5 bg-[#eee] rounded-[50%];
+  }
+
+  .sidebar-label-container:hover input ~ .checkmark {
+    @apply bg-[#ccc];
+  }
+  .sidebar-label-container input:checked ~ .checkmark {
+    @apply bg-[#2196f3];
+  }
+  .checkmark:after {
+    @apply absolute hidden;
+    content: "";
+  }
+
+  .sidebar-label-container input:checked ~ .checkmark:after {
+    @apply block;
+  }
+
+  .sidebar-label-container .checkmark:after {
+    @apply top-[6.4px] left-[6.4px] w-[7px] h-[7px] bg-white rounded-[50%];
+  }
+
+  .all {
+    @apply bg-gradient-to-r from-[blue] to-[crimson];
+  }
+}
